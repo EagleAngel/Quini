@@ -1,97 +1,44 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Quiniela Mundial 2026</title>
-
-<link rel="stylesheet" href="style.css">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script src="data.js"></script>
-<script defer src="app.js"></script>
-
-</head>
-
-<body>
-
-<header>
-    <h1>🏆 Quiniela Mundial 2026</h1>
-    <p>México 🇲🇽 · Estados Unidos 🇺🇸 · Canadá 🇨🇦</p>
-</header>
-
 <section class="dashboard">
 
     <div class="card">
-        <h2>Participantes vivos</h2>
+        <h2>👥 Participantes</h2>
+        <span id="totalPlayers">12</span>
+    </div>
+
+    <div class="card">
+        <h2>🟢 Vivos</h2>
         <span id="aliveCount">0</span>
     </div>
 
     <div class="card">
-        <h2>Eliminados</h2>
+        <h2>🔴 Eliminados</h2>
         <span id="deadCount">0</span>
     </div>
 
     <div class="card">
-        <h2>Ganador</h2>
+        <h2>🏆 Ganador</h2>
         <span id="winner">-</span>
     </div>
 
 </section>
+<section class="card">
 
-<section class="champion-section">
-
-<h2>Seleccionar Campeón</h2>
-
-<select id="championSelect">
-    <option value="">Seleccionar...</option>
-</select>
-
-</section>
-
-<section>
+<h2>📈 Probabilidades</h2>
 
 <canvas id="probabilityChart"></canvas>
 
 </section>
+<section class="card">
 
-<section>
+<h2>🌎 Equipos Vivos</h2>
 
-<h2>Participantes</h2>
-
-<div id="participantsContainer"></div>
-
-</section>
-
-<section>
-
-<h2>Calendario</h2>
-
-<table id="matchesTable">
-
-<thead>
-<tr>
-<th>#</th>
-<th>Fecha</th>
-<th>Fase</th>
-<th>Local</th>
-<th>Visitante</th>
-<th>Resultado</th>
-</tr>
-</thead>
-
-<tbody></tbody>
-
-</table>
+<div id="aliveTeams"></div>
 
 </section>
+<section class="card">
 
-<button id="resetBtn">
-Reiniciar torneo
-</button>
+<h2>❌ Equipos Eliminados</h2>
 
-</body>
-</html>
+<div id="eliminatedList"></div>
+
+</section>
