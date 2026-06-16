@@ -212,6 +212,81 @@ data:values
 }
 }
 );
+function updateTeamLists(){
+
+    const aliveDiv =
+    document.getElementById("aliveTeams");
+
+    const eliminatedDiv =
+    document.getElementById("eliminatedList");
+
+    aliveDiv.innerHTML="";
+    eliminatedDiv.innerHTML="";
+
+    allTeams.forEach(team=>{
+
+        const span =
+        document.createElement("span");
+
+        span.className="team";
+
+        span.textContent=team;
+
+        if(eliminatedTeams.includes(team))
+        {
+            span.classList.add(
+                "eliminated"
+            );
+
+            eliminatedDiv.appendChild(span);
+        }
+        else
+        {
+            aliveDiv.appendChild(span);
+        }
+
+    });
+
+}
+}
+function updateRanking(){
+
+    const rankingDiv =
+    document.getElementById("ranking");
+
+    rankingDiv.innerHTML="";
+
+    const ranking =
+    participantsData.map(player=>{
+
+        const active =
+        player.teams.filter(
+            t =>
+            !eliminatedTeams.includes(t)
+        );
+
+        return {
+            name:player.name,
+            alive:active.length
+        };
+
+    });
+
+    ranking.sort(
+        (a,b)=>b.alive-a.alive
+    );
+
+    ranking.forEach(player=>{
+
+        const div =
+        document.createElement("div");
+
+        div.innerHTML=
+        `${player.name} - ${player.alive} equipos`;
+
+        rankingDiv.appendChild(div);
+
+    });
 
 }
 
